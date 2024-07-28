@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  # Our NestJS Api
+  nest:
+    build:
+      dockerfile: Dockerfile
+      context: ./nest
+      # Only build development stage from Dockerfile
+      target: development
+    volumes:
+      - ./nest:/gizem/src/app
+      - /gizem/src/app/node_modules/
+
+    command: npm run start:dev
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+    ports:
+      - 3000:3000
+      - 9229:9229
+  
+  angular:
+    build:
+      dockerfile: Dockerfile
+      context: ./angular
+      target: development
+    command: npm run start
+    volumes:
+      - ./angular:/gizem/angular/src/app
+      - /gizem/angular/src/app/node_modules
+    ports:
+      - 4200:4200
+    links:
+      - nest

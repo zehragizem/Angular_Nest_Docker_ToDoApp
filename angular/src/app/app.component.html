@@ -1,0 +1,19 @@
+<!-- app.component.html -->
+<div class="container">
+    <h1>Yapılacaklar Listesi</h1>
+    <form class="todo-form" (ngSubmit)="addTodo()">
+      <input [(ngModel)]="newTodo.title" name="title" placeholder="Yapılacakları yazın..." required />
+      <button type="submit" class="add-button"> Ekle</button>
+    </form>
+    <ul class="todo-list">
+      <li *ngFor="let todo of todos; let i = index" class="todo-item" [ngClass]="{'completed': todo.completed}">
+        <span class="todo-title">{{ todo.title }}</span>
+        <div class="todo-actions">
+          <button class="complete-button" (click)="toggleTodoCompletion(i)"><i class="fas fa-check"></i>Tamamla</button>
+          <button class="update-button" (click)="updateTodoTitle(i)"><i class="fas fa-edit"></i>Düzenle</button>
+          <button class="delete-button" (click)="deleteTodo(i)"><i class="fas fa-trash-alt"></i>Sil</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  

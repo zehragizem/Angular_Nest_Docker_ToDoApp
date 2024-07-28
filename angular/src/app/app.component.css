@@ -1,0 +1,140 @@
+/* app.component.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe6f2;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 2px solid #ff69b4;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ff69b4;
+    font-family: 'Cursive', sans-serif;
+  }
+  
+  .todo-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .todo-form input {
+    flex: 1;
+    flex-direction: row; /* Stack button on top of input */
+    padding: 12px;
+    border: 2px solid #ff69b4;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #ffe6f2;
+    color: #ff69b4;
+  }
+  .todo-form input::placeholder {
+    color: #f99dcb; /* White placeholder text */
+  }
+  .add-button {
+    padding: 0px 16px ;
+    height: 46px; /* Match the input box height */
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-family: 'Cursive', sans-serif;
+  }
+  
+  .add-button:hover {
+    background-color: #e500a0;
+    transform: scale(1.05);
+  }
+  
+  .todo-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #ffe6f2;
+    border-left: 5px solid #ff69b4;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .todo-title {
+    font-size: 20px;
+    color: #ff69b4;
+    font-family: 'Cursive', sans-serif;
+  }
+  
+  .todo-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .complete-button, .update-button, .delete-button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-family: 'Cursive', sans-serif;
+  }
+  
+  .complete-button {
+    background-color: #4CAF50;
+    color: #fff;
+  }
+  
+  .complete-button:hover {
+    background-color: #28762c;
+    transform: scale(1.05);
+  }
+  
+  .update-button {
+    background: #ff6f00;
+    color: #fff;
+  }
+  
+  .update-button:hover {
+    background: #a24405;
+    transform: scale(1.05);
+  }
+  
+  .delete-button {
+    background: #ff0000;
+    color: #fff;
+  }
+  
+  .delete-button:hover {
+    background: #990000;
+    transform: scale(1.05);
+  }
+  
+  .completed .todo-title {
+    text-decoration: line-through;
+    color: #aaa;
+  }
+  
+  .todo-actions button i {
+    margin-right: 5px;
+  }
+  
